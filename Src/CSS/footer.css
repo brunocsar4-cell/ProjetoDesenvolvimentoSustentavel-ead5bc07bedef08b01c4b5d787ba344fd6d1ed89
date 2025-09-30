@@ -1,0 +1,16 @@
+/* Rodapé */
+footer {
+  background: #212529;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+footer a {
+  text-decoration: none;
+  color: #f8d7da;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #fff;
+}

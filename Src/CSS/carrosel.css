@@ -1,0 +1,107 @@
+/* ================================
+   🎨 Estilo do Carrossel Previne+
+   ================================ */
+
+/* Container geral */
+.carousel-container {
+  position: relative;
+  max-width: 100%;
+  margin-bottom: 2.5rem; /* espaço até a próxima seção */
+}
+
+/* Carrossel */
+#carouselExample {
+  height: clamp(300px, 45vh, 480px); /* altura proporcional */
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  background: linear-gradient(180deg, #e9f6ff 0%, #f8fbff 100%);
+}
+
+/* Estrutura interna */
+#carouselExample .carousel-inner,
+#carouselExample .carousel-item,
+#carouselExample .carousel-item a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Imagens responsivas */
+#carouselExample .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* mostra a imagem inteira sem cortes */
+  object-position: center;
+  background: linear-gradient(180deg, #e9f6ff 0%, #f8fbff 100%);
+  border-radius: 8px;
+  transition: transform 0.4s ease;
+}
+
+/* Pequeno zoom ao passar o mouse */
+#carouselExample .carousel-item img:hover {
+  transform: scale(1.02);
+}
+
+/* Controles (setas) */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  opacity: 0.8;
+  transition: background 0.3s ease;
+}
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: rgba(0, 0, 0, 0.45);
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%);
+  background-color: #dc3545; /* vermelho da identidade visual */
+  border-radius: 50%;
+  padding: 8px;
+}
+
+/* Indicadores (bolinhas) */
+.carousel-indicators [data-bs-target] {
+  background-color: #dc3545;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+.carousel-indicators .active {
+  background-color: #a71d2a; /* tom mais escuro no ativo */
+}
+
+/* Legendas */
+.carousel-caption {
+  background: rgba(0,0,0,0.55);
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+.carousel-caption h5 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: #fff;
+}
+.carousel-caption p {
+  font-size: 0.85rem;
+  color: #f1f1f1;
+}
+
+/* Responsivo (mobile) */
+@media (max-width: 768px) {
+  #carouselExample {
+    height: clamp(220px, 35vh, 340px);
+  }
+  .carousel-caption h5 {
+    font-size: 0.9rem;
+  }
+  .carousel-caption p {
+    font-size: 0.7rem;
+  }
+}
