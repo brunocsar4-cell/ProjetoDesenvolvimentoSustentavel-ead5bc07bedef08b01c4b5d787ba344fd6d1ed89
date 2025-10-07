@@ -2,84 +2,222 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prevenção</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prevenção</title>
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- CSS externo -->
-    <link rel="stylesheet" href="/Src/CSS/prevencao.css">
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="Src/CSS/prevencao.css">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="Src/CarregandoComponents/Map.js"></script>
+
 </head>
-
 <body>
-    <!-- Navbar superior -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-danger" href="#">Previne+</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.PaginaInicial.html">Início</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <nav class="navbar navbar-expand-lg bg-light shadow-sm">
+  <div class="container">
+  <!-- Logo com link para a página inicial -->
+    <a class="navbar-brand d-flex align-items-center" href="index.PaginaInicial.html">
+      <span class="fw-bold text-danger">Previne+</span>
+    </a>
 
-    <!-- Conteúdo principal -->
-    <div class="container">
-        <header class="text-center py-5">
-            <h1 class="fw-bold">Cuidar da saúde hoje <span class="text-danger">garante a qualidade de vida de
-                    amanhã.</span></h1>
-            <p class="lead text-muted">O que fazer no dia a dia para evitar doenças.</p>
-        </header>
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <!-- Botão do menu mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Itens de menu -->
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav justify-content-center text-center mb-4" style="width: 100%;">
-            <li class="nav-item"><a class="nav-link" href="#">Introdução</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.PaginaInicial.html">Introdução</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.PaginaInicial.html">Introdução</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.PaginaInicial.html">Introdução</a></li>
-            <li class="nav-item"><a class="nav-link" href="#mitos">mitos e verdades</a></li>
-        </ul>
-        
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#curiosidade">ISTs e DSTs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#saudemasculina">Saúde Masculina</a></li>
+        <li class="nav-item"><a class="nav-link" href="#saudefeminina">Saúde Feminina</a></li>
+        <li class="nav-item"><a class="nav-link" href="#vacinacao">Vacinação</a></li>
+        <li class="nav-item"><a class="nav-link" href="#mitos">Mitos</a></li>
+      </ul>
     </div>
+  </div>
 </nav>
-<div id="areas"></div>
-    <section id= "mitos" class="container my-5">
-        <h2 class="text-center mb-4">Mitos e Verdades sobre Ist's</h2>
-        <div class="row text-center">
-            <div class="col-md-3">
-                <div class="card shadow-sm p-3">
-                    <h5 class="fw-bold text-danger">MITO</h5>
-                    <p>“Dá pra saber se a pessoa tem IST só olhando” → MITO</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card shadow-sm p-3">
-                    <h5 class="fw-bold text-primary">Saúde Masculina</h5>
-                    <p>Dicas e campanhas como Novembro Azul.</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card shadow-sm p-3">
-                    <h5 class="fw-bold text-pink">Saúde Feminina</h5>
-                    <p>Prevenção e cuidados, como Outubro Rosa.</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card shadow-sm p-3">
-                    <h5 class="fw-bold text-success">Vacinação</h5>
-                    <p>Mantenha sua carteira de vacinação em dia.</p>
-                </div>
-            </div>
+  
+  <section id="curiosidade" class="container my-5">
+    <h2 class="text-center fw-bold text-danger mb-4">ISTs e DSTs</h2>
+
+    <div class="card shadow-sm p-4 mb-4">
+      <h4 class="fw-bold text-danger">ISTs (Infecções Sexualmente Transmissíveis)</h4>
+      <ul>
+        <li>É o termo atual e mais correto.</li>
+        <li>Usa-se “infecção” porque a pessoa pode estar infectada mesmo sem sintomas, mas ainda assim transmitir para
+          outros.</li>
+        <li>O objetivo é destacar a importância da prevenção e do diagnóstico precoce.</li>
+      </ul>
+    </div>
+    <div class="card shadow-sm p-4">
+      <h4 class="fw-bold text-primary">DSTs (Doenças Sexualmente Transmissíveis)</h4>
+      <ul>
+        <li>Era o termo mais usado antigamente.</li>
+        <li>Chamava de “doença” porque só considerava os casos em que a pessoa apresentava sintomas visíveis.</li>
+        <li>Exemplo: sífilis em estágio avançado, herpes com lesões aparentes.</li>
+      </ul>
+    </div>
+  </section>
+  <section id="mitos-verdades" class="container mb-5 text-center">
+    <img
+      src="https://static.vecteezy.com/ti/vetor-gratis/p1/1392051-sexual-health-medical-prevent-awareness-icons-gratis-vetor.jpg"
+      alt="Imagem de conscientização sobre saúde sexual" class="img-fluid rounded mb-4 shadow-sm">
+    <main class="container">
+
+      <section id="saudemasculina" class="section-container container mb-5">
+        <div class="row align-items-center">
+          <!-- Coluna da imagem -->
+          <div class="col-md-5 mb-3 mb-md-0">
+            <img
+              src="https://www.es.gov.br/Media/PortalES/_Profiles/c4d8c6e6/d8d1f292/novembro-azul.jpg?v=638731875610730210"
+              alt="Imagem de conscientização sobre saúde masculina" class="img-fluid rounded shadow-sm">
+          </div>
+          <!-- Coluna do texto -->
+          <div class="col-md-7">
+            <h2>Saúde Masculina — Novembro Azul</h2>
+            <p>Novembro Azul é uma campanha de conscientização sobre a saúde do homem, focada na prevenção e diagnóstico
+              precoce do câncer de próstata, o segundo mais comum entre os homens.</p>
+            <p>Durante o mês, ações informam sobre exames preventivos como toque retal e PSA, e sobre prevenção de
+              doenças como cardiovasculares e diabetes.</p>
+            <p>Homens devem adotar hábitos saudáveis: alimentação equilibrada, exercícios, evitar álcool e tabaco, e
+              consultas médicas regulares para detectar problemas precocemente.</p>
+            <p>A campanha também busca quebrar tabus, incentivando o cuidado com a saúde como ato de amor próprio e
+              responsabilidade.</p>
+          </div>
         </div>
+      </section>
+
+      <section id="saudefeminina" class="section-container">
+         <div class="row align-items-center">
+          <!-- Coluna da imagem -->
+          <div class="col-md-5 mb-3 mb-md-0">
+            <img
+              src="https://semad.portovelho.ro.gov.br/uploads/editor/images/295-2950949_logo-outubro-rosa-png-dark-pink-breast-cancer-removebg-preview.png"
+              alt="Imagem de conscientização sobre saúde masculina" class="img-fluid rounded shadow-sm">
+          </div>
+          <!-- Coluna do texto -->
+          <div class="col-md-7">
+       <h2 style="color: #ff69b4;">Saúde Feminina — Outubro Rosa</h2>
+        <p>Outubro Rosa é uma campanha internacional que conscientiza sobre o câncer de mama, destacando a prevenção,
+          diagnóstico precoce e tratamento adequado, além de apoiar mulheres afetadas pela doença.</p>
+        <p>O câncer de mama é o mais comum entre mulheres. Durante o mês, ações informam sobre fatores de risco,
+          sintomas, autoexame e mamografias regulares.</p>
+        <p>A cor rosa simboliza apoio e solidariedade, com eventos e palestras promovidos por instituições e empresas
+          para divulgar informações e incentivar a prevenção.</p>
+        <p>Estilo de vida saudável — alimentação equilibrada, exercícios, evitar álcool e tabaco — também é fundamental
+          na prevenção.</p>
+      </section>
+
+      <section id="vacinacao" class="section-container">
+        <div class="row align-items-center">
+          <!-- Coluna da imagem -->
+          <div class="col-md-5 mb-3 mb-md-0">
+            <img
+              src="https://midias.correio24horas.com.br/2025/04/08/edicasea-composicao-da-vacina-contra-a-gripe-e-atualizada-anualmente-imagem-pxb--shutterstock-td8tt3ton6.jpg"
+              alt="Imagem de conscientização sobre saúde masculina" class="img-fluid rounded shadow-sm">
+          </div>
+          <!-- Coluna do texto -->
+          <div class="col-md-7">
+        <h2>Vacinação</h2>
+        <p>A vacinação é uma das medidas mais eficazes para prevenir doenças infecciosas e proteger a saúde individual e
+          coletiva. Através da administração de vacinas, o sistema imunológico é estimulado a produzir uma resposta
+          imune
+          específica contra determinados agentes patogênicos.</p>
+        <p>As vacinas previnem doenças como sarampo, caxumba, rubéola, poliomielite, hepatite B, gripe, HPV, entre
+          outras.
+          Elas não apenas protegem o indivíduo vacinado, mas também contribuem para a imunidade de grupo, reduzindo a
+          circulação dos agentes causadores de doenças.</p>
+        <p>É fundamental seguir o calendário de vacinação recomendado pelas autoridades de saúde, especialmente na
+          infância, para garantir uma proteção completa e duradoura.</p>
+      </section>
+
+    </main>
+    <section id="mapa" class="container mb-5">
+      <h2 class="text-center mb-4">Postos de Saúde e Hospitais Próximos</h2>
+      <p class="text-center text-muted">Veja os locais mais próximos para atendimento e vacinação.</p>
+
+      <div id="map" style="height: 400px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);"></div>
     </section>
 
+
+    <section id="mitos" class="container mb-5">
+      <h2 class="text-center mb-4">Mitos e Verdades sobre ISTs</h2>
+
+      <div class="row text-center">
+
+        <!-- Card 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm p-3 h-100">
+            <h5 class="fw-bold text-danger">Mito ❌</h5>
+            <p>“Usar duas camisinhas ao mesmo tempo protege mais.”</p>
+            <p class="text-muted small">Na verdade, o atrito entre elas pode rasgar o preservativo e aumentar o risco de
+              infecção.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm p-3 h-100">
+            <h5 class="fw-bold text-success">Verdade ✅</h5>
+            <p>“As ISTs podem ser transmitidas mesmo sem sintomas aparentes.”</p>
+            <p class="text-muted small">Por isso é importante fazer exames regularmente, mesmo que você se sinta bem.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm p-3 h-100">
+            <h5 class="fw-bold text-danger">Mito ❌</h5>
+            <p>“Só pessoas com muitos parceiros pegam IST.”</p>
+            <p class="text-muted small">Qualquer pessoa sexualmente ativa pode contrair uma IST se não usar proteção.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row text-center">
+
+        <!-- Card 4 -->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm p-3 h-100">
+            <h5 class="fw-bold text-success">Verdade ✅</h5>
+            <p>“O uso de preservativo é a forma mais eficaz de prevenção.”</p>
+            <p class="text-muted small">Tanto o preservativo masculino quanto o feminino reduzem o risco de transmissão
+              de ISTs.</p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm p-3 h-100">
+            <h5 class="fw-bold text-danger">Mito ❌</h5>
+            <p>“Após o tratamento, não é preciso se proteger.”</p>
+            <p class="text-muted small">Mesmo após a cura, é essencial continuar usando camisinha para evitar
+              reinfecção.</p>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm p-3 h-100">
+            <h5 class="fw-bold text-success">Verdade ✅</h5>
+            <p>“As ISTs podem ser transmitidas pelo sexo oral.”</p>
+            <p class="text-muted small">O uso de camisinha e barreiras de látex (dental dam) também é importante nesse
+              tipo de relação.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
